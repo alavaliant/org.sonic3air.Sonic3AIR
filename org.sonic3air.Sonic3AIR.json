@@ -1,8 +1,8 @@
 {
     "app-id" : "org.sonic3air.Sonic3AIR",
-    "runtime" : "org.gnome.Platform",
-    "runtime-version" : "46",
-    "sdk" : "org.gnome.Sdk",
+    "runtime" : "org.freedesktop.Platform",
+    "runtime-version" : "23.08",
+    "sdk" : "org.freedesktop.Sdk",
     "command" : "sonic3air",
     "finish-args" : [
         "--share=ipc",
@@ -18,47 +18,24 @@
         "--filesystem=~/.var/app/com.valvesoftware.Steam/.local/share/Steam/steamapps/common/Sega Classics/uncompressed ROMs/Sonic_Knuckles_wSonic3.bin:ro"
     ],
     "cleanup" : [
-        "/include",
-        "/lib/pkgconfig",
-        "/man",
-        "/share/doc",
-        "/share/gtk-doc",
-        "/share/man",
-        "/share/pkgconfig",
-        "*.la",
-        "*.a",
-        "/lib/girepository-1.0",
-        "/share/gir-1.0",
-        "/bin/gtk4*",
-        "/bin/pango*",
-        "/bin/sassc"
+        "/include"
     ],
     "modules" : [
-        {
-            "name" : "libadwaita",
-            "buildsystem" : "meson",
-            "config-opts" : [
-                "-Dexamples=false",
-                "-Dintrospection=disabled",
-                "-Dtests=false"
-            ],
-            "sources" : [
-                {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/libadwaita.git",
-                    "commit" : "ffb6b435c7da83c210a8f8a53af5082f6ed3816b"
-                }
-            ]
-        },
         {
             "name" : "sonic3air",
             "buildsystem": "simple",
             "build-commands": [
-                "install -Dp -m 755 sonic3air /app/bin/sonic3air",
                 "install -Dp -m 755 sonic3air_linux /app/bin/sonic3air_linux",
                 "install -Dp -m 644 libdiscord_game_sdk.so /app/lib/libdiscord_game_sdk.so",
                 "cp -r data /app/bin",
-                "install -Dp -m 644 config.json /app/bin/config.json"
+                "install -Dp -m 644 config.json /app/bin/config.json",
+
+                "install -Dp -m 755 sonic3air-launcher.sh /app/bin/sonic3air",
+                
+                "install -Dp -m 644 org.sonic3air.Sonic3AIR.desktop /app/share/applications/org.sonic3air.Sonic3AIR.desktop",
+                "install -Dp -m 644 org.sonic3air.Sonic3AIR.png /app/share/icons/hicolor/256x256/apps/org.sonic3air.Sonic3AIR.png",
+                "install -Dp -m 644 org.sonic3air.Sonic3AIR.metadata.xml /app/share/metainfo/org.sonic3air.Sonic3AIR.metadata.xml"
+                
             ],
             "sources" : [
                 {
@@ -67,24 +44,20 @@
                     "sha256" : "45e97c48513a7b466f5c55e766abad49c859ba0c7334f570da7cba2f5b143469"
                 },
                 {
-                    "type" : "script",
-                    "commands" : [
-                        "sonic3air-launcher && /app/bin/sonic3air_linux"
-                    ],
-                    "dest-filename" : "sonic3air"
-                }
-            ]
-        },
-        {
-            "name" : "sonic3air-launcher",
-            "builddir" : true,
-            "buildsystem" : "meson",
-            "sources" : [
+                    "type" : "file",
+                    "path": "sonic3air-launcher.sh"
+                },
                 {
-                    "type" : "git",
-                    "url" : "https://github.com/ArclightMat/sonic3air-launcher.git",
-                    "branch" : "main",
-                    "commit" : "8f6e795d4264bdcaa6a2cde2f7e773ca43633318"
+                    "type" : "file",
+                    "path": "data/org.sonic3air.Sonic3AIR.desktop"
+                },
+                {
+                    "type" : "file",
+                    "path": "data/org.sonic3air.Sonic3AIR.png"
+                },
+                {
+                    "type" : "file",
+                    "path": "data/org.sonic3air.Sonic3AIR.metadata.xml"
                 }
             ]
         }

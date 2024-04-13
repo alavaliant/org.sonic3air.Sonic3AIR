@@ -1,0 +1,787 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+  <id>org.sonic3air.Sonic3AIR</id>
+  <name>Sonic 3: A.I.R</name>
+  <metadata_license>CC0-1.0</metadata_license>
+  <summary>Fan-made remaster of Sonic 3&amp;K</summary>
+  <description>
+    <p>Dr. Eggman’s (AKA Dr. Robotnik’s) Death Egg was once again blasted by Sonic, crash-landing on the peak of a volcano on the Floating Island.</p>
+    <p>Dr. Eggman is still at large, and Sonic can’t allow him to get his hands on the Master Emerald and repair the Death Egg. Sonic must also keep Knuckles off his back but Knuckles has problems too. As guardian of the Floating Island and all the Emeralds, Knuckles must do his part to keep the island safe. While they’re going the rounds with each other, who will stop Dr. Eggman?</p>
+    <p>To play Sonic 3: Angel Island Revisited, you need Sonic 3 &amp; Knuckles from the SEGA Mega Drive &amp; Genesis Classics collection installed on Steam.</p>
+  </description>
+  <url type="homepage">https://sonic3air.org/</url>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://sonic3air.org/images/icecap01.png</image>
+      <caption>Tails holding Knuckles at Ice Cap Zone</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://sonic3air.org/images/skysanctuary01.png</image>
+      <caption>Sonic running through Sky Sanctuary Zone</caption>
+    </screenshot>
+  </screenshots>
+  <launchable type="desktop-id">org.sonic3air.Sonic3AIR.desktop</launchable>
+  <project_license>GPL-3.0-only</project_license>
+  <developer id="org.sonic3air">
+    <name>Eukaryot</name>
+  </developer>
+  <releases>
+    <release type="stable" date="2024-02-01" urgency="medium" version="v24.02.02.0">
+      <description>
+        <p>New features and improvements</p>
+        <ul>
+          <li>Added controller rumble support (needs to be enabled in the Options and might not work with all controllers)</li>
+          <li>Added an in-game downloader for the remastered soundtrack, so the game download can be noticably smaller</li>
+          <li>Experimental Ghost Sync mode is now available directly in the Options menu</li>
+          <li>Added an option for how to draw other players in Ghost Sync, e.g. with full opacity</li>
+          <li>Added a more Mania-accurate rotation implementation to "Character Rotation" in the options</li>
+          <li>Added an option for different visual styles for gamepad button icons</li>
+          <li>Made glitch fix setting for speedrunning more accessible, and split it into three options</li>
+          <li>In mod options, you can now expand / collapse each mod</li>
+          <li>Added faster navigation in Options and Mods menus by holding X (D on keyboard)</li>
+          <li>Changed the background of the mod details window to a dark one, for better readability</li>
+          <li>You can now dropdash in MGZ spin wheel triggers to activate them</li>
+          <li>Knuckles' AIZ intro now uses the correct critters for AIZ</li>
+          <li>With infinite lives option active, 1-up bubbles in bonus stages are replaced with rings now</li>
+          <li>FBZ 2 mid-boss laser can now be destroyed</li>
+          <li>Added missing badniks to Knuckles' path in CNZ 1 for the Sonic 3 level layout</li>
+          <li>Added sound for CNZ cannon shooting</li>
+          <li>Starposts now indicate the special stage type more clearly</li>
+          <li>Improved software rendering blur effect to the same quality as OpenGL hardware</li>
+          <li>Performance improvements for ZIP mod loading and script execution</li>
+        </ul>
+        <p>Bug fixes</p>
+        <ul>
+          <li>Added a whole bunch of game fixes contributed by community members</li>
+          <li>Fixed a rendering problem with OpenGL Hardware setting on latest AMD graphics card drivers on Windows</li>
+          <li>Fix for an issue in frame timing that could lead to a random stuttering frame rate</li>
+          <li>Fix for various rendering issues (with both OpenGL and software)</li>
+          <li>Stability fixes for networking</li>
+          <li>Fix for a crush bug that can occur when walking on ceilings</li>
+          <li>Fixed glitch when dropdashing or bubble bouncing onto the HCZ hand launcher</li>
+          <li>Set a proper level floor height for HCZ 2, so you can't fall into the glitchy abyss there any more</li>
+          <li>Fix for camera / capsule position after HCZ 2 boss</li>
+          <li>Fix for a possible softlock with the MGZ spinning tops</li>
+          <li>Fixed a bug that occurred if dying at the end of ICZ 1 without touching any checkpoint before</li>
+          <li>Fixed a possible softlock with LBZ 1's first cup elevator</li>
+          <li>Removed unnecessary springs in the floor in FBZ 1</li>
+          <li>Fixed sand dust position in SOZ 1 boss</li>
+          <li>Removed duplicate rings in LRZ 2</li>
+          <li>Fixed chunk tiling in HPZ</li>
+          <li>Fixed that the "Keep Shield after Zone" option could give you a shield again after restarting at the last checkpoint</li>
+          <li>Fixed that after level results tally, score numbers just disappeared instead of quickly moving out of the screen</li>
+          <li>Fixed an original game bug that caused you to lose two lives if drowning and be killed by a pirhana at the same time</li>
+          <li>Fix for wrong background colored pixels in Continue sprites for Sonic and Tails</li>
+          <li>Fix for wrong final time in Time Attack if the game got paused in the run</li>
+          <li>Fixes for competition mode items</li>
+          <li>Competition Mode now uses the original game's viewport sizes, instead of having a too small lower viewport</li>
+          <li>Fix for wrong positioning of the competition mode background</li>
+          <li>Several fixes when playing in 4:3 (using dev mode or the classic mode sample mod)</li>
+          <li>Added a security check if scripts cause an internal script stack overflow</li>
+          <li>Additional minor fixes and touch-ups</li>
+        </ul>
+        <p>Modding features &amp; improvements</p>
+        <ul>
+          <li>Replaced "Debug.drawRect" with "Renderer.drawRect", introducing a few more parameters like render queue</li>
+          <li>Using the same reset behavior for "Renderer.drawText" and "Renderer.drawRect" as for sprites, so they don't disappear during fades any more</li>
+          <li>Added a new way of rendering sprites in script ("Renderer.addSpriteHandle" and the various SpriteHandle methods)</li>
+          <li>Also for sprite rendering, added several blend modes and more flexible support for tint &amp; added colors</li>
+          <li>Support for L + R shoulder buttons, if the mod.json unlocks it</li>
+          <li>Support for defining required mods and recommended order of mods (see "doc/Modding.pdf" for details)</li>
+          <li>Added "UniqueID" mod.json property</li>
+          <li>Lemonscript now supports types "float" and "double" for floating point numbers</li>
+          <li>Extended the standard library of functions usable by scripts with more math and string functions</li>
+          <li>Added function "getStringFromCharacter"</li>
+          <li>Support for adding string + number (requires script feature level 2)</li>
+          <li>Added script function "addressof" to query the address inside a memory access (like a define) or the address hook of a function</li>
+          <li>Added support for alias names for script functions</li>
+          <li>Experimental rewind using Numpad-9 (requires dev mode)</li>
+          <li>Added support for changing the "DATA SELECT" text by adding a sprite with the key "dataselect_text"</li>
+          <li>Including a lot of base game script improvements by Vinegar</li>
+        </ul>
+      </description>
+    </release>
+    <release type="stable" date="2022-09-10" urgency="medium" version="v22.09.10.0">
+      <description>
+        <p>New features and options:</p>
+        <ul>
+          <li>Added a reduced version of the Options menu to the in-game Pause screen</li>
+          <li>Replaced the static main menu background with an animated (and moddable) one</li>
+          <li>Added an update check to the Options menu</li>
+          <li>Added option for maintaining shields between zones</li>
+          <li>Added option for using the Prototype Knuckles' Theme in the Hidden Palace fight against him</li>
+          <li>Added an option to activate Hyper Dash only if pressing any direction, like it's done in Origins</li>
+          <li>Added different Super Sonic Jump Ability options</li>
+          <li>Added option to make monitors fall down when hit from below</li>
+          <li>Added option to choose between main boss or mini-boss music for the FBZ 2 mid-boss / laser trap</li>
+          <li>For the highest anti-flicker setting, reduced intensities of Hyper Sonic screen flash and screen shake effects</li>
+          <li>Sound Test in Options menu now shows a proper name for each music track as well</li>
+          <li>Added DDZ to Act Select after reaching it in a normal game</li>
+          <li>Support for extended camera &amp; camera outrun options in Time Attack</li>
+        </ul>
+        <p>Bug fixes:</p>
+        <ul>
+          <li>Fix for a crash that can occur when entering the Options menu with certain controllers attached</li>
+          <li>Fixed that audio mods used reverse mod priority</li>
+          <li>Fix for positioning of Death Egg in SSZ end cutscene, which didn't work in all level layout settings</li>
+          <li>Fixed a S3AIR-specific collision bug for the MGZ spinning top</li>
+          <li>Also enabled several other glitch fixes previously prepared, like the "frame-perfect reset" bug</li>
+          <li>Fixes for Knuckles outro</li>
+          <li>Fix for a bug in Data Select when left + right is pressed at the same time</li>
+          <li>Fix for a bug that caused some keys on the keyboard to be mapped incorrectly</li>
+          <li>Fixed a possible soft-lock when using a bubble bounce to get on a MGZ spinning top</li>
+          <li>Fixed that infinite lives setting reset your life counter of save games back to 3</li>
+          <li>Fixed that in Time Attack or with Infinite Lives option, there was no ring sound for collecting a ring (or monitor) right when reaching 100, 200, etc. rings</li>
+          <li>Fixed that drop dash did not work on certain badniks (like Jaws, Blastoid, Mushmeanie)</li>
+          <li>Using the original emulated S&amp;K credits medley now instead of the remastered on if emulated soundtrack is chosen (this ensures that the medley also works if no remastered soundtrack files are even available)</li>
+          <li>Fixed "Value stack error: Too many elements" that could come up when Knuckles' fight against Super Mecha Sonic took very long</li>
+          <li>Fix for wrong palette usage in LBZ 1 boss flash</li>
+          <li>Fixed a glitch when character gets hurt while triggering a SSZ teleporter</li>
+          <li>Fix for wrong animation sprite when Knuckles loses his super form while climbing</li>
+          <li>Fixed that pressing Accept and Back at the same time in main menu could mess up the menu</li>
+          <li>Fixed palette errors from the original game in some places</li>
+          <li>Enforcing a fixed simulation update rate of 60 Hz in Time Attack</li>
+          <li>Off-screen tails display for player 2 now correctly renders his tails as well</li>
+          <li>Fixes in the "Score Millionaire" achievement image</li>
+          <li>Fix for PS4 controller LED color when playing as Sonic &amp; Tails</li>
+          <li>Removed the unnecessary "Back" buttons between mods in the mods options</li>
+          <li>Several fixes in scripts and documentation - thanks especially to Veenee, Lave slime and Dynamic Lemons</li>
+          <li>Plus a whole bunch of minor other fixes</li>
+
+        </ul>
+        <p>Other improvements:</p>
+        <ul>
+          <li>Performance improvement to rendering in Blue Spheres stages</li>
+          <li>Optimizations for script loading speeds, e.g. when switching mods</li>
+          <li>Improved on the reliability of triggering Tails Assist</li>
+          <li>Small tweaks to make sure AI Tails drops out of his flight after respawn more consistently, when he's close to the player</li>
+          <li>AI Tails does not consume the bouncepads in the Gumball Machine bonus stage any more</li>
+          <li>Removed fast music track versions in options menu's sound test, unless dev mode is active</li>
+          <li>Better OpenGL compatibility checks, to avoid startup crashes on some machines that require fail-safe mode</li>
+          <li>Better support for high-DPI display scaling under Windows</li>
+          <li>Test for possible fix to save data folder visibilty under Android 11 and higher</li>
+        </ul>
+        <p>Modding:</p>
+        <ul>
+          <li>A lot of script code improvements</li>
+          <li>More sprites added for modding (see "doc/modding/sprites")</li>
+          <li>Better support for strings in scripts (requires script feature level 2)</li>
+          <li>Added "Renderer.drawText" script function for easy text rendering</li>
+          <li>Added support for modded fonts</li>
+          <li>Added a better way of defining constants in scripts by using the "constant" keyword</li>
+          <li>Support for constant arrays in scripts</li>
+          <li>Added dynamic icons for input buttons like "@input_icon_button_A"</li>
+          <li>Added support for underwater Super/Hyper palettes</li>
+          <li>Added "Audio.getAudioKeyType" script function</li>
+          <li>New script functions for mod interoperability: "System.callFunctionByName", "System.getGlobalVariableValueByName", "System.setGlobalVariableValueByName"</li>
+          <li>Support for constant array definitions in a single line</li>
+          <li>Fixed that something like "stringformat("%02d", 0)" did only output a single 0</li>
+          <li>Now silently ignoring multiple includes of the same file in lemonscript</li>
+          <li>Integration of the Sonic Hacking Contest splash screen</li>
+        </ul>
+      </description>
+    </release>
+    <release type="development" date="2022-08-27" urgency="medium" version="v22.08.27.0">
+      <description>
+        <p>New features and options:</p>
+        <ul>
+          <li>Added DDZ to Act Select after reaching it in a normal game</li>
+          <li>Added an option to activate Hyper Dash only if pressing any direction, like it's done in Origins</li>
+          <li>Added different Super Sonic Jump Ability options</li>
+          <li>Added option to make monitors fall down when hit from below</li>
+          <li>Added option to choose between main boss or mini-boss music for the FBZ 2 mid-boss / laser trap</li>
+          <li>Debug Mode can now be toggled in the in-game Options as well</li>
+        </ul>
+        <p>Bug fixes:</p>
+        <ul>
+          <li>Fixed a S3AIR-specific collision bug for the MGZ spinning top</li>
+          <li>Also enabled several other glitch fixes previously prepared, like the "frame-perfect reset" bug</li>
+          <li> Fixes for Knuckles outro</li>
+          <li>Fix for broken music fade from title screen to main menu, a regression in the last preview</li>
+          <li>Fix for a bug that caused some keys on the keyboard to be mapped incorrectly</li>
+          <li>Fixed a possible soft-lock when using a bubble bounce to get on a MGZ spinning top</li>
+          <li>Fixed that infinite lives setting reset your life counter of save games back to 3</li>
+          <li>Fixed that in Time Attack or with Infinite Lives option, there was no ring sound for collecting a ring (or monitor) right when reaching 100, 200, etc. rings</li>
+          <li>Using the original emulated S&amp;K credits medley now instead of the remastered on if emulated soundtrack is chosen (this ensures that the medley also works if no remastered soundtrack files are even available)</li>
+          <li>Fixed "Value stack error: Too many elements" that could come up when Knuckles' fight against Super Mecha Sonic took very long</li>
+          <li>Fixed a glitch when character gets hurt while triggering a SSZ teleporter</li>
+          <li>Fix for wrong palette usage in LBZ 1 boss flash</li>
+          <li>Fixed a crash in the script compiler when loading certain script mods</li>
+          <li>Fixed that pressing Accept and Back at the same time in main menu could mess up the menu</li>
+          <li>Plus a whole bunch of minor other fixes</li>
+        </ul>
+        <p>Other improvements:</p>
+        <ul>
+          <li>>Performance improvement to rendering in Blue Spheres stages</li>
+          <li>Improved on the reliability of triggering Tails Assist</li>
+          <li>Small tweaks to make sure AI Tails drops out of his flight after respawn more consistently, when he's close to the player</li>
+          <li>AI Tails does not consume the bouncepads in the Gumball Machine bonus stage any more</li>
+          <li>Removed fast music track versions in options menu's sound test, unless dev mode is active</li>
+          <li>Better OpenGL compatibility checks, to avoid startup crashes on some machines that require fail-safe mode</li>
+          <li>Better support for high-DPI display scaling under Windows</li>
+          <li>Test for possible fix to save data folder visibilty under Android 11 and higher</li>
+        </ul>
+        <p>Modding:</p>
+        <ul>
+          <li>>A lot of script code improvements</li>
+          <li>More sprites added for modding (see "doc/modding/sprites")</li>
+          <li>Added support for modded fonts</li>
+          <li>Added dynamic icons for input buttons like "@input_icon_button_A"</li>
+          <li>Added support for underwater Super/Hyper palettes</li>
+          <li>Added "Audio.getAudioKeyType" script function</li>
+          <li>Support for constant array definitions in a single line</li>
+          <li>Now silently ignoring multiple includes of the same file in lemonscript</li>
+          <li>Integration of the Sonic Hacking Contest splash screen</li>
+        </ul>
+      </description>
+    </release>
+    <release type="development" date="2022-05-15" urgency="medium" version="v22.05.15.0">
+      <description>
+        <p>New features and options:</p>
+        <ul>
+          <li>Added a reduced version of the Options menu to the in-game Pause screen</li>
+          <li>Replaced the static main menu background with an animated (and moddable) one</li>
+          <li>Added an update check to the Options menu</li>
+          <li>Added option for maintaining shields between zones</li>
+          <li>Added option for using the Prototype Knuckles' Theme in the Hidden Palace fight against him</li>
+          <li>For the highest anti-flicker setting, reduced intensities of Hyper Sonic screen flash and screen shake effects</li>
+          <li>Sound Test in Options menu now shows a proper name for each music track as well</li>
+          <li>Support for extended camera &amp; camera outrun options in Time Attack</li>
+        </ul>
+        <p>Bug fixes:</p>
+        <ul>
+          <li>Fix for a crash that can occur when entering the Options menu with certain controllers attached</li>
+          <li>Fixed that audio mods used reverse mod priority</li>
+          <li>Fix for positioning of Death Egg in SSZ end cutscene, which didn't work in all level layout settings</li>
+          <li>Fix for a bug in Data Select when left + right is pressed at the same time</li>
+          <li>Enforcing a fixed simulation update rate of 60 Hz in Time Attack</li>
+          <li>Fixed that drop dash did not work on certain badniks (like Jaws, Blastoid, Mushmeanie)</li>
+          <li>Fixed palette errors from the original game in some places</li>
+          <li>Fix for wrong animation sprite when Knuckles loses his super form while climbing</li>
+          <li>Several fixes in scripts and documentation - thanks especially to Veenee, Lave slime and Dynamic Lemons</li>
+          <li>Off-screen tails display for player 2 now correctly renders his tails as well</li>
+          <li>Fix for Sonic's broken finger in "Score Millionaire" achievement image</li>
+          <li>Fix for PS4 controller LED color when playing as Sonic &amp; Tails</li>
+          <li>Removed the unnecessary "Back" buttons between mods in the mods options</li>
+        </ul>
+        <p>Other improvements:</p>
+        <ul>
+          <li>Optimizations for script loading speeds, e.g. when switching mods</li>
+          <li>Smaller performance optimizations for rendering</li>
+        </ul>
+        <p>Modding:</p>
+        <ul>
+          <li>Added "Renderer.drawText" script function for easy text rendering</li>
+          <li>Added a better way of defining constants in scripts by using the "constant" keyword</li>
+          <li>Better support for strings in scripts (requires script feature level 2)</li>
+          <li>Support for constant arrays in scripts</li>
+          <li>New script functions for mod interoperability: "System.callFunctionByName", "System.getGlobalVariableValueByName", "System.setGlobalVariableValueByName"</li>
+          <li>Fixed that something like "stringformat("%02d", 0)" did only output a single 0</li>
+          <li>And some more, see the Oxygen Handbook PDF</li>
+        </ul>
+      </description>
+    </release>
+    <release type="stable" date="2021-09-28" urgency="medium" version="v21.09.28.0">
+      <description>
+        <ul>
+          <li>Fixed script compiler bugs that could lead to crashes when loading certain mods</li>
+          <li>Time Attack restart now requires holding Y button briefly, instead of being instant; this can be turned off in the Gameplay Options</li>
+          <li>Back button binding (e.g. Backspace) now acts the same way as pressing B in Data Select and other menus</li>
+          <li>Fixed smaller issues with custom controller setup</li>
+        </ul>
+      </description>
+    </release>
+    <release type="stable" date="2021-09-12" urgency="medium" version="v21.09.12.0">
+      <description>
+        <ul>
+          <li>Added a keyboard / controller setup menu</li>
+          <li>Added an option to display a textured backdrop for non-16:9 screens / windows</li>
+          <li>Fixed a regression for display of mod author and version texts in mod details window</li>
+          <li>Fixed a minor text rendering issue with the pure software render method</li>
+          <li>Fixes for audio-related issues, including random crashes</li>
+          <li>Fix for the flamethrower sound occasionally glitching out to high pitched noise</li>
+          <li>Fix for Blue Spheres music speed progression when using emulated soundtrack</li>
+          <li>Fix for the blue spheres extreme lag bug from original S&amp;K</li>
+          <li>Fixed missing spindash release sound for Tails in competition mode</li>
+          <li>To be more in line with Sonic Mania, Tails can now catch you again unless you keep holding Down, when using Mania-style Tails Assist</li>
+          <li>Added cheat sheet for game hotkeys when pressing F1 (lists dev mode hotkeys as well when it's active)</li>
+          <li>Fixed that Tails would not respawn if killed just before the level results</li>
+          <li>Fixed that "fast forward cutscene" text could be shown in the menus if pausing during active fast forward</li>
+          <li>Fixed that you could clip through a monitor without opening it in some instances</li>
+          <li>Fix for glitched CNZ cannon when falling into one after getting hurt</li>
+          <li>Fix for CNZ 2 end cutscene cannon firing up under certain circumstances</li>
+          <li>Fixed spindash cloud when grabbed by Big Arms boss</li>
+          <li>Fix for a bug in MHZ's vine wrap that could cause you to end up hovering inside them</li>
+          <li>Made SOZ pyramid rising a skippable cutscene</li>
+          <li>Fixed that rising sand in SOZ 2 could be glitched out if triggered by a Super Flicky</li>
+          <li>Fix for an object spawn issue from original S3&amp;K causing e.g. a missing corner sprite in the first SOZ 2 rising sand section</li>
+          <li>Fixed that you could get hit by the lava despite landing on a platform above it in one place in LRZ 1</li>
+          <li>Fixed some issues in the first DDZ boss, including a possible softlock</li>
+          <li>Modding: Added a lot of debugging features from Oxygen Engine directly into Sonic 3 A.I.R. when dev mode is active</li>
+          <li>Modding: Added support for binary output in stringformat script function (using e.g. "%b" or "%016b")</li>
+          <li>Modding: Added script functions "Mods.isModActive" and "Mods.getModPriority"</li>
+        </ul>
+      </description>
+    </release>
+    <release type="development" date="2021-08-21" urgency="medium" version="v21.08.21.0">
+      <description>
+        <ul>
+          <li>Fixes for script-related game crashes / freezes (again)</li>
+          <li>Fix for an object spawn issue from original S3&amp;K causing e.g. a missing corner sprite in the first SOZ 2 rising sand section</li>
+          <li>To be more in line with Sonic Mania, Tails can now catch you again unless you keep holding Down, when using Mania-style Tails Assist</li>
+        </ul>
+      </description>
+    </release>
+    <release type="development" date="2021-08-15" urgency="medium" version="v21.08.15.0">
+      <description>
+        <ul>
+          <li>Fixes for script-related game crashes / freezes</li>
+        </ul>
+      </description>
+    </release>
+    <release type="development" date="2021-08-08" urgency="medium" version="v21.08.08.0">
+      <description>
+        <ul>
+          <li>Added a keyboard / controller setup menu</li>
+          <li>Added an option to display a textured backdrop for non-16:9 screens / windows</li>
+          <li>Fixed a regression for display of mod author and version texts in mod details window</li>
+          <li>Fixes for audio-related issues, including random crashes</li>
+          <li>Fix for the flamethrower sound occasionally glitching out to high pitched noise</li>
+          <li>Fix for Blue Spheres music speed progression when using emulated soundtrack</li>
+          <li>Fixed that Tails would not respawn if killed just before the level results</li>
+          <li>Fixed that "fast forward cutscene" text could be shown in the menus if pausing during active fast forward</li>
+          <li>Fixed that you could in some instances clip through a monitor without opening it</li>
+          <li>Fix for glitched CNZ cannon when falling into one after getting hurt</li>
+          <li>Fix for CNZ 2 end cutscene cannon firing up under certain circumstances</li>
+          <li>Fixed spindash cloud when grabbed by Big Arms boss</li>
+          <li>Made SOZ pyramid rising a skippable cutscene</li>
+          <li>Fixed that rising sand in SOZ 2 could be glitched out if triggered by a Super Flicky</li>
+          <li>Fixed that you could get hit by the lava despite landing on a platform above it in one place in LRZ 1</li>
+          <li>Fixed some issues in the first DDZ boss, including a possible softlock</li>
+          <li>Fixed missing spindash release sound for Tails in competition mode</li>
+          <li>Fixed a minor text rendering issue with the pure software render method</li>
+          <li>Added cheat sheet for game hotkeys when pressing F1 (lists dev mode hotkeys as well when it's active)</li>
+          <li>Modding: Added a lot of debugging features from Oxygen Engine directly into Sonic 3 A.I.R. when dev mode is active</li>
+          <li>Modding: Added support for binary output in stringformat script function (using e.g. "%b" or "%016b")</li>
+        </ul>
+      </description>
+    </release>
+    <release type="stable" date="2021-05-28" urgency="medium" version="v21.05.08.0">
+      <description>
+        <ul>
+          <li>Added support for directly loading zipped mods (also including multiple mods in one zip file)</li>
+          <li>Added HQ3x and HQ4x filters as options</li>
+          <li>Changed the two Soft upscalers to adapt better to the actual screen resolution</li>
+          <li>Smoother filtering for rotated sprites</li>
+          <li>Added options for V-Sync and performance display</li>
+          <li>Added option for muffled sound when underwater</li>
+          <li>Added an option for the (faster) Sonic 3 version of the continue screen music</li>
+          <li>Now using actual emulation for almost all sound effects and emulated music tracks, not just the continuous sound effects as previously</li>
+          <li>Added an option to display the lives counter in the upper right corner</li>
+          <li>Added a manual game controller selection</li>
+          <li>Supporting more keys for custom keyboard bindings (see the Manual for a complete list)</li>
+          <li>Reduced LRZ 2 boss hit points down to 8, going back to the original value of 14 is an option</li>
+          <li>Larger parts of the cutscenes in HPZ and the start of SSZ are now skippable</li>
+          <li>Ported over missing code for a continue screen from S&amp;K when playing as Sonic alone</li>
+          <li>Fix for a crash with certain game controllers</li>
+          <li>Fix for a crash in Mods menu when trying to move the "None" placeholder entry</li>
+          <li>Fixed that too many small bubbles could prevent object spawning in parts of HCZ 1</li>
+          <li>Fixed a regression that caused Tails to teleport in MGZ 2 boss</li>
+          <li>Fixed that Super Flickies disappeared when FBZ 2 boss fight starts</li>
+          <li>Fixed that Tails flew away instead of hovering above the player after starting Tails Assist in DEZ 2's inverse gravity sections</li>
+          <li>Fixed that fast forwarding was available in Data Select after exiting to menu from the game outro</li>
+          <li>Fix for a potential soft-lock when Super/Hyper transforming right when hitting the ground</li>
+          <li>Fixed that Blue Sphere game stage was not saved after entering a stage code</li>
+          <li>Various smaller bug fixes, for both original S3&amp;K bugs and S3AIR-specific issues</li>
+          <li>Rendering performance optimizations, especially for OpenGL Software rendering (though Hardware is still faster)</li>
+          <li>Script / game simulation performance optimizations</li>
+          <li>Error message boxes can now be cancelled (again), so they don't reappear over and over again in case of repeating errors</li>
+          <li>Added support for modded Tails' tails sprites in Time Attack ghosts</li>
+          <li>Added support for modded Discord Rich Presence texts</li>
+          <li>Modding: Added function "Renderer.drawCustomSpriteWithTransform" for script modding</li>
+          <li>Modding: Added function "System.hasPlatformFlag" to differentiate between mobile and desktop versions, and also "PlatformFlags" override in config.json</li>
+          <li>Modding: Added support for preprocessor conditions like "#if GAMEAPP &gt;= 0x21050800" so a mod can use newer update's script functions but still stay compatible with the previous update</li>
+          <li>Modding: Added support for SMPS audio file playback via S3&amp;K sound driver emulation</li>
+        </ul>
+      </description>
+    </release>
+    <release type="development" date="2021-04-24" urgency="medium" version="v21.04.24.0">
+      <description>
+        <ul>
+          <li>Added support for directly loading zipped mods (also including multiple mods in one zip file)</li>
+          <li>Added an option for the (faster) Sonic 3 version of the continue screen music</li>
+          <li>Added an option to display the lives counter in the upper right corner</li>
+          <li>Added options for V-Sync and performance display</li>
+          <li>Added a manual game controller selection</li>
+          <li>Reduced LRZ 2 boss hit points down to 8, going back to the original value of 14 is an option</li>
+          <li>Larger parts of the cutscenes in HPZ and the start of SSZ are now skippable</li>
+          <li>Ported over missing code for a continue screen from S&amp;K when playing as Sonic alone</li>
+          <li>Better prevention of screensaver and system shutdown when playing with a game controller (which did not seem to always work reliably, especially with Linux)</li>
+          <li>Fixed several audio-related issues</li>
+          <li>Various smaller bug fixes</li>
+          <li>Error message boxes can now be cancelled (again), so they don't reappear over and over again in case of repeating errors</li>
+          <li>Linux: Added more possible paths where Steam may be installed, i.e. where to search for the S3&amp;K ROM</li>
+          <li>Linux: Now respecting XDG_DATA_HOME environment variable</li>
+          <li>Fixes for a regression in the script compiler, which caused problems with some script mods</li>
+          <li>Modding: Added function "Renderer.drawCustomSpriteWithTransform" for script modding</li>
+          <li>Modding: Added function "System.hasPlatformFlag" to differentiate between mobile and desktop versions and "PlatformFlags" override in config.json</li>
+          <li>Modding: Added support for preprocessor conditions like "#if GAMEAPP &gt;= 0x21020800" so a mod can use newer update's script functions but still stay compatible with the previous update</li>
+        </ul>
+      </description>
+    </release>
+    <release type="development" date="2020-11-07" urgency="medium" version="v20.11.07.0">
+      <description>
+        <ul>
+          <li>Rendering performance optimizations, especially for OpenGL Software rendering (though Hardware is still faster)</li>
+          <li>Script / game simulation performance optimizations</li>
+          <li>Smoother filtering for rotated sprites</li>
+          <li>Added HQ3x and HQ4x filters as options</li>
+          <li>Now using actual emulation for almost all sound effects and emulated music tracks, not just the continuous sound effects as previously</li>
+          <li>Added option for muffled sound when underwater</li>
+          <li>Fix for a crash with certain game controllers</li>
+          <li>Fix for a crash in Mods menu when trying to move the "None" placeholder entry</li>
+          <li>Fixed that too many small bubbles could prevent object spawning in parts of HCZ 1</li>
+          <li>Fixed a regression that caused Tails to teleport in MGZ 2 boss</li>
+          <li>Fixed that Super Flickies disappeared when FBZ 2 boss fight starts</li>
+          <li>Fixed that Tails flew away instead of hovering above the player after starting Tails Assist in DEZ 2's inverse gravity sections</li>
+          <li>Fixed that fast forwarding was available in Data Select after exiting to menu from the game outro</li>
+          <li>Supporting more keys for custom keyboard bindings (see the Manual for a complete list)</li>
+          <li>Added support for modded Discord Rich Presence texts</li>
+        </ul>
+      </description>
+    </release>
+    <release type="stable" date="2020-07-24" urgency="medium" version="v20.07.24.0">
+      <description>
+        <ul>
+          <li>New in-game menu for basic mods management (activation/deactivation and order of active mods)</li>
+          <li>Added support for mod settings</li>
+          <li>Split music selection options for CNZ, ICZ, LBZ into acts</li>
+          <li>Proper widescreen support for SSZ Sonic 1 callback boss</li>
+          <li>Gave more impact to actual attacks on the SOZ 1 boss</li>
+          <li>Added fast forwarding support (key W, or gamepad button Y) for several more cutscenes</li>
+          <li>Movement of ground before FBZ 2 boss now gets faster towards the end, when you're just waiting anyways</li>
+          <li>Found game controllers are now saved to settings_input.json with the automatically assigned mapping, if none existed yet there</li>
+          <li>Remember last used display in multi-monitor setups and stay there when switching to fullscreen</li>
+          <li>Added a clear view mode that hides the menu during pause by pressing W (keyboard) or Y (gamepad)</li>
+          <li>Fix for two bugs in special stages - one original in S&amp;K, one specific to S3AIR - that caused a wrong conversion of spheres to rings</li>
+          <li>Fixed glitches happening after changing from OpenGL software to hardware renderer</li>
+          <li>Fixed a rare bug that Tails wouldn't spawn properly before the MGZ 2 boss</li>
+          <li>Minor palette fixes in ICZ and LBZ</li>
+          <li>Fixed that restarting in the brief cutscene after the SOZ 1 level results made the game think it's Act 2</li>
+          <li>Fixed a visual glitch when SOZ 2 boss shoots</li>
+          <li>Fixed that Iwamodoki (the LRZ rock badnik) showed points on explosion, even though you don't get them added to your score</li>
+          <li>Fixed revert of underwater palette bug on Super cancel for Tails / Knuckles, when anti-flicker is off</li>
+          <li>Fix for weird deaths that could happen when Knuckles starts/stops gliding very close above certain floors</li>
+          <li>Fixed a bug that allows for infinite Tails flight when using Tails Assist</li>
+          <li>Fixed that clearing a save game did not properly reset that slot's score as well</li>
+          <li>Reduced playback volume of some emulated prototype tracks that were too loud</li>
+        </ul>
+      </description>
+    </release>
+    <release type="development" date="2020-07-18" urgency="medium" version="v20.07.18.0">
+      <description>
+        <ul>
+          <li>Basic subfolder support in mods menu</li>
+          <li>Fixed a cause of crashes in mods menu</li>
+          <li>Added experimental mod settings support</li>
+          <li>Fixed a regression that music did not immediately restart after extra life jingle</li>
+          <li>Fixed a bug in settings_input.json handling that produced duplicate device name entries there</li>
+          <li>Fixed a rare bug that Tails wouldn't spawn properly before the MGZ 2 boss</li>
+          <li>Minor palette fixes in ICZ and LBZ</li>
+          <li>Fixed revert of underwater palette bug on Super cancel for Tails / Knuckles, when anti-flicker is off</li>
+          <li>Fix for weird deaths that could happen when Knuckles starts/stops gliding very close above certain floors</li>
+          <li>Split music selection options for CNZ, ICZ, LBZ into acts</li>
+        </ul>
+      </description>
+    </release>
+    <release type="development" date="2020-07-04" urgency="medium" version="v20.07.04.0">
+      <description>
+        <ul>
+          <li>New in-game menu for basic mods management (activation/deactivation and order of active mods)</li>
+          <li>Fixed glitches happening after changing from OpenGL software to hardware renderer</li>
+          <li>Fixed a bug that allows for infinite Tails flight when using Tails Assist</li>
+          <li>Fixed a visual glitch when SOZ 2 boss shoots</li>
+          <li>Fixed that clearing a save game did not properly reset that slot's score as well</li>
+          <li>Gave more impact to actual attacks on the SOZ 1 boss</li>
+          <li>Added fast-forwarding for some more cutscene (after HCZ 1 &amp; 2, LBZ 2 Knuckles, SOZ 1)</li>
+          <li>Found game controllers are now saved to settings_input.json with the automatically assigned mapping, if none existed yet there</li>
+        </ul>
+      </description>
+    </release>
+    <release type="development" date="2020-05-30" urgency="medium" version="v20.05.30.0">
+      <description>
+        <ul>
+          <li>Proper widescreen support for SSZ Sonic 1 callback boss</li>
+          <li>Fix for two bugs in special stages - one original in S&amp;K, one specific to S3AIR - that caused a wrong conversion of spheres to rings</li>
+          <li>Remember last used display in multi-monitor setups and stay there when switching to fullscreen</li>
+          <li>Fixed that restarting in the brief cutscene after the SOZ 1 level results made the game think it's Act 2</li>
+          <li>Fixed that Iwamodoki (the LRZ rock badnik) showed points on explosion, even though you don't get them added to your score</li>
+          <li>Added fast forwarding support (key W, or gamepad button Y) now for the MHZ and FBZ end cutscenes as well</li>
+          <li>Movement of ground before FBZ 2 boss now gets faster towards the end, when you're just waiting anyways</li>
+          <li>Reduced playback volume of some emulated prototype tracks that were too loud</li>
+        </ul>
+      </description>
+    </release>
+    <release type="stable" date="2020-04-26" urgency="medium" version="v20.04.26.0">
+      <description>
+        <ul>
+          <li>Fix for potential freeze / crash when using fail-safe mode (ohh the irony)</li>
+        </ul>
+      </description>
+    </release>
+    <release type="stable" date="2020-04-25" urgency="medium" version="v20.04.25.0">
+      <description>
+        <ul>
+          <li>Added script modding support + open source release of the game scripts</li>
+          <li>Included the latest Oxygen Engine development application build</li>
+          <li>Added a new software rendering method for fail-safe mode, without any OpenGL dependencies</li>
+          <li>Added Discord Rich Presence integration</li>
+          <li>Added option to keep music playing in cases where the same music track would be restarted</li>
+          <li>Added option for the roll + jump control lock of the original game</li>
+          <li>Sound test in Options now shows all registered music IDs with their keys for modding</li>
+          <li>In Knuckles' intro, now the S&amp;K version of his theme is used in all cases</li>
+          <li>Fixed that time was not reset when aborting Sonic's AIZ intro</li>
+          <li>Fixed unintentional effects of nearby CNZ wheels that happened when disabling the "fix glitches" setting</li>
+          <li>Fixed the accidental nerf of CNZ balloons introduced in last update</li>
+          <li>Fixed that ICZ round ice crystals could hurt you during invulnerability frames, plus they get destroyed by the fire shield now</li>
+          <li>Fixed wrong screen top limit for Knuckles when going back up after respawn at last LBZ 1 checkpoint (using Tails)</li>
+          <li>Fixed that LRZ 1 boss could instantly kill Tails (in all forms) im some spots for no obvious reason</li>
+          <li>Fixed original game bug that Death Egg was visible in one spot of LRZ 1 for Knuckles</li>
+          <li>Fix for broken playback of Sky Sanctuary music in outro, if that was selected</li>
+          <li>Fixed switch to wrong music when dying in DDZ</li>
+          <li>Fixed corrupted colors of red Super Emerald after S&amp;K special stage</li>
+          <li>Fixed some bugs with Sonic 2 monitors</li>
+          <li>Fixed that classic shield got lost after visited a special stage particularly when using the "All Shields" option</li>
+          <li>Fix for classic shield monitors' broken animation when they popped up by sign post</li>
+          <li>Fixed that software renderer drew mirrored character sprites one pixel off</li>
+          <li>Fixed Super Sonic palette in AIZ 1 intro for mods that use their own Super palette</li>
+          <li>Fix for second player Tails' tails in special stages when using a modded palette</li>
+          <li>Text fixes for the secrets</li>
+          <li>Several minor bug fixes</li>
+          <li>Added modding support for Hyper Sonic color palette</li>
+          <li>Added modding support for Cutscene Knuckles sprites</li>
+        </ul>
+      </description>
+    </release>
+    <release type="stable" date="2019-12-24" urgency="medium" version="v19.12.24.0">
+      <description>
+        <ul>
+          <li>Added an intro cutscene for Knuckles in AIZ (different depending on level layouts)</li>
+          <li>Added competition mode</li>
+          <li>Updated music remasters</li>
+          <li>Added optional level music tracks from the Nov 3, 1993 prototype of Sonic 3 for CNZ 1+2, ICZ 1+2, LBZ 1+2</li>
+          <li>Also added various other Sonic 3 prototype tracks as options</li>
+          <li>Added "Pick by Zone" to some audio options</li>
+          <li>Added an option to disable Sonic's Insta-Shield</li>
+          <li>Added options for classic shield and shield upgrading</li>
+          <li>Added option for a more Mania-like bubble shield bouncing behavior</li>
+          <li>Added option to switch to Sonic 2 monitor style</li>
+          <li>Added saving of current score in (non-completed) save game slots</li>
+          <li>Increased time bonus values to account for S3&amp;K's relatively long levels</li>
+          <li>Enabled game pause &amp; exit in outros</li>
+          <li>Optimizations for rendering performance</li>
+          <li>Nerfed the Super Peel-Out underwater (it's still stronger than spindash, though)</li>
+          <li>Fixed that missing Chaos Emeralds in a completed game could not be collected</li>
+          <li>Fixed that Max Control Time Attack required a game restart after unlocking</li>
+          <li>Fix for music not switching back when running out of rings in Super form</li>
+          <li>Fix for broken cloud effect when dropdashing into a tube that enforces rolling</li>
+          <li>Fixed that Knuckles' MGZ 2 boss did not show up in Sonic 3 level layouts</li>
+          <li>Fixed an animation bug when Knuckles is on a wall, but very close to the ground</li>
+          <li>Fixed Super Sonic colors in Blue Sphere mini-game Perfect screen</li>
+          <li>Fixed that modded character colors got lost after super form ended when flicker effects were set to original</li>
+          <li>Fixed Super Peel-Out sprite angles when using classic 8-way character rotation</li>
+          <li>Fixed broken physics when caught by a CNZ barrel while spindashing</li>
+          <li>The sand corks starting sand flow in SOZ 2 can't be activated by Hyper dash any more</li>
+          <li>Some fixes and rearrangements in the Options and Extras menus</li>
+          <li>Fixed that only 7 instead of 14 random special stages got generated</li>
+          <li>Slightly reduced the maximum difficulty for randomly generated special stages in the main game</li>
+          <li>Plus some more minor bug fixes</li>
+          <li>Removed more glitch fixes for the original game when the "fix glitches" option in settings.json is active</li>
+          <li>Added moddable custom character palettes for special stages</li>
+          <li>Added moddable continue icons for Sonic and Tails as well</li>
+          <li>Added modding for Tails' tails sprites</li>
+          <li>Added moddable sprites for red RINGS / TIME text versions in HUD (these are invisible / empty by default)</li>
+          <li>Drawing fixed HUD elements like SCORE text behind the numbers, to facilitate HUD mods that want to add a background there</li>
+          <li>For better compatibility with the Mod Manager, added support for settings_global.json and settings_input.json files</li>
+        </ul>
+      </description>
+    </release>
+    <release type="stable" date="2019-09-28" urgency="medium" version="v19.09.28.1">
+      <description>
+        <ul>
+          <li>Fixed reset of the Blue Sphere game progress</li>
+          <li>Fixed a potential crash in the pause menu</li>
+          <li>Fixed Super form palette glitches in outros</li>
+          <li>Spindash reverb does not apply to the dropdash charge sound any more</li>
+          <li>Support for modded sprites for the Time Attack ghosts</li>
+        </ul>
+      </description>
+    </release>
+    <release type="stable" date="2019-09-26" urgency="medium" version="v19.09.26.0">
+      <description>
+        <ul>
+          <li>Added a new secret</li>
+          <li>Reduced achievement requirements to unlock secrets</li>
+          <li>Added "Max Control" Time Attack category for Sonic, which gets available when all his abilities are unlocked</li>
+          <li>Added option for randomly generated special stages</li>
+          <li>Included the latest music remaster tracks from DJ Spindash</li>
+          <li>Minor overhaul for the menus</li>
+          <li>Added dust cloud effect for drop dash</li>
+          <li>Fixed an S3AIR specific bug in Tails AI that caused him to jump when he should spindash instead</li>
+          <li>Fixed an original game bug where second player Tails got frozen on MHZ poles when offscreen</li>
+          <li>Fix yet another audio bug: with fast level music as Super Theme, Super Cancel unintentionally restarted the music</li>
+          <li>Fixed emulated version of data select music track being looped too early</li>
+          <li>Fixed that for fast run animation not worked properly with classic 8-way rotation</li>
+          <li>Fixed that in the Sonic 3 level layouts, some of the objects preventing Knuckles to use Sonic's path did not work as intended (in AIZ 1 and ICZ 1)</li>
+          <li>Fixed a soft-lock in CNZ when AI Tails gets into a cannon while still carrying Sonic</li>
+          <li>Fire shield now protects from freezers in ICZ</li>
+          <li>Fixed broken animation for Super Peel-Out near vertical FBZ cylinders</li>
+          <li>Fixed too early screen fade-out when Knuckles leaves SOZ 2 towards LRZ</li>
+          <li>After Knuckles' end boss fight in SSZ, don't let Mecha Sonic explode unless all Chaos Emeralds got collected</li>
+          <li>Fixed wrong positioning of Sonic after drop dash onto a SSZ spinning disc</li>
+          <li>With Knuckles &amp; Tails in SSZ via Act Select mode, Tails won't get left behind any more in the post-boss cutscene</li>
+          <li>Fixed weird behavior when attaching to a DEZ hang carrier with charged drop dash</li>
+          <li>Fixed a palette problem with DEZ 1 boss and anti-flicker setting set to maximum</li>
+          <li>Fixed some Robotnik graphics glitches in DEZ 2 when playing with Knuckles</li>
+          <li>Fixed a recently introduced bug that giant rings in S&amp;K half could bring you to Chaos Emerald stages even though they got already completed</li>
+          <li>Various minor sprite fixes for the special stage results screen</li>
+          <li>Fixed a game freeze when opening the pause menu while it still fades out</li>
+          <li>Fixed a crash when spamming Time Attack restart with W key</li>
+          <li>Plus various more bug fixes</li>
+          <li>Do not allow restarting when character has just died</li>
+          <li>When resuming from the pause menu, ignore that button press for the game, i.e. don't automatically jump after pause</li>
+          <li>Extended mod.json format with more metadata, see updated modding PDF and sample mods</li>
+          <li>Added support for character palette mods, allowing for individual custom palettes of up to 30 colors</li>
+        </ul>
+      </description>
+    </release>
+    <release type="stable" date="2019-5-18" urgency="medium" version="v19.05.18.0">
+      <description>
+        <ul>
+          <li>Added music options for fight against Knuckles and the cutscene afterwards in Hidden Palace Zone</li>
+          <li>Added music options for the SSZ boss fights taken from Sonic 1 &amp; 2</li>
+          <li>Added "Infinite Time" option</li>
+          <li>Added "Randomized Monitors" option</li>
+          <li>Fix for general audio issues on some PCs</li>
+          <li>Cut down RAM consumption by music tracks, preventing potential crashes after long play time</li>
+          <li>Proper error handling when modded music file could not get found or loaded</li>
+          <li>Fixed that some sound test tracks kept playing when leaving the options menu</li>
+          <li>Fixed that Hyper Tails could still drown, unlike the other Hyper forms</li>
+          <li>Fix for a recently introduced bug that drowning music did not stop when reaching air</li>
+          <li>Fix for broken music switch when canceling super form during a boss encounter</li>
+          <li>Fix for shading of distant objects in special stages (they were too dark) when using the software renderer</li>
+          <li>Fixed various objects unintentionally interacting with debug mode</li>
+          <li>Slightly changed AI Tails' reaction times to more closely resemble the original game</li>
+          <li>Let characters switch to their falling animation in some places where the floor or bridge below collapses</li>
+          <li>Fixed a really weird collision bug during AIZ fire transition that allowed you to glitch through the floor when doing a frame-perfect jump</li>
+          <li>Fix for "frame eating" glitch with character dying at the start of MGZ 2 boss that can happen if using Hyper Sonic</li>
+          <li>Made sure that Knuckles' MGZ 2 boss flees before the level results start, so you don't get to see broken graphics</li>
+          <li>The CNZ fans now stop your fall after you got hit</li>
+          <li>Increased the acceleration of CNZ barrels by holding up/down just a little bit</li>
+          <li>In CNZ 2 pre-boss cutscene, the tube colors now change to blue when Knuckles presses the button</li>
+          <li>Don't allow Knuckles to fly over the CNZ 2 boss</li>
+          <li>Fix for spindash handling on ICZ trampolines</li>
+          <li>Made sure the rising water in Knuckles' part of LBZ 2 can always keep up, so you won't encounter a broken background because of missing water</li>
+          <li>Fixed that MHZ curly vine could detach you from a parachute mushroom</li>
+          <li>Allow Sonic to free himself from the MHZ sticky vines using drop dash</li>
+          <li>Fixed black sky if you're really fast at the end of FBZ 2</li>
+          <li>Fix for spindash handling in SOZ quicksand (if a moving pillar pushed you in during spindash)</li>
+          <li>Fix for an door opening sound in LRZ 1 caused by an offscreen wall door</li>
+          <li>Fix for missing Death Egg in background at the end of LRZ 2</li>
+          <li>Fixed a soft-lock in HPZ when Tails was left behind and Sonic &amp; Knuckles waited forever at the transporter</li>
+          <li>Fixed SSZ teleporters not reacting in Time Attack unless screen was in the right position</li>
+          <li>Fixed some collision glitches</li>
+          <li>Certain exploitable glitch fixes can now be undone via the settings.json entry "GAMEPLAY_TWEAK_FIX_GLITCHES" (has no effect in Time Attack, so this one stays as glitchless as possible)</li>
+          <li>Fixed a small bug in Act Select and Time Attack menus, and using "Single Act" text instead of "Act 1" for HPZ and SSZ</li>
+          <li>Debug game recordings now use current date and time as part of their file name</li>
+          <li>Debug game recording can be enforced in fail-safe mode via the config.json</li>
+        </ul>
+      </description>
+    </release>
+    <release type="stable" date="2019-04-23" urgency="medium" version="v19.04.23.0">
+      <description>
+        <ul>
+          <li>Added borderless window fullscreen mode (and it's the default when pressing Esc or Alt+Return)</li>
+          <li>Replaced "Free Roam" name with "Act Select"</li>
+          <li>Added "Infinite Lives" option for newbies</li>
+          <li>Right Alt key support</li>
+          <li>Disabled game's custom PrintScreen functionality, as it crashed the game for some players</li>
+          <li>Fixed a slight misplacement of the scanlines effect</li>
+          <li>The back button (S on keyboard, B on Xbox controller) now takes you from Data Select to Main Menu, and from Main Menu to Title Screen</li>
+          <li>Small fixes for Time Attack restart and results screen</li>
+          <li>No music restart any more when entering Normal Game mode</li>
+          <li>Fixed a rare but severe bug causing a VDP error message box and complete screen corruption</li>
+          <li>Fixed a rare bug that corrupts object spawning, leading to objects being spawned twice or missing</li>
+          <li>Fixed Cutscene Knuckles' palette</li>
+          <li>Fixed Knuckles continue icon colors after S&amp;K special stages</li>
+          <li>Fixed for free character movement in level results after being carried by Tails, which could lead to soft-locks</li>
+          <li>Fixed position of characters when rolling when level results start</li>
+          <li>Fix for entering a bonus stage when doing a Hyper Dash while stars over starpost are on screen</li>
+          <li>Fix for soft-lock when transforming right when touching the ground</li>
+          <li>Fix for Tails being teleported when Hyper Knuckles hits a wall</li>
+          <li>Fix for giant rings sometimes despawning and not coming back (most notably with AIZ giant ring after fire transition)</li>
+          <li>AIZ Swing Vines are slightly easier to grab</li>
+          <li>Fixed left movement limit for AIZ 2 after returning from a special stage</li>
+          <li>Small level extension in AIZ 2</li>
+          <li>Minor improvement for AI Tails' behavior in AIZ 2 post-boss cutscene</li>
+          <li>Added a few rings at the start of HCZ 1, so new players won't lose a life right away when landing on the blow fish badniks or spikes</li>
+          <li>Fix for Tails staying behind in HCZ 1 when playing as Knuckles &amp; Tails</li>
+          <li>Fixed Sonic getting stuck when Tails carries him above a fan in HCZ</li>
+          <li>Fixed potential soft-lock at the end of HCZ 1</li>
+          <li>Fixed / reduced dead stops in HCZ 1 and MGZ 1</li>
+          <li>Fixed CNZ 1 boss not lowering its height when a full row of block is destroyed</li>
+          <li>Fixed broken state when Tails carries Sonic into a cannon in CNZ (including softlock when this happens in the cutscene after CNZ 2 boss)</li>
+          <li>Fixed CNZ 2 weird kill by collision above a barrel in the lights-out section (from Framerater's review video)</li>
+          <li>Prevent insta-shield and drop dash while snowboarding</li>
+          <li>Fixed a bug allowing Knuckles to skip the ICZ 1 boss</li>
+          <li>Reduced wait time at start of Knuckles cutscene in MHZ 1</li>
+          <li>Fixed that MHZ catapult mushrooms did not reach full height</li>
+          <li>Fixed for occasionally missing parts of the terrain before MHZ 2 boss</li>
+          <li>Fixed a small palette glitch after Knuckles' LBZ 1 boss</li>
+          <li>Fixed rendering issue in FBZ 1 (after the propellers)</li>
+          <li>Fixed FBZ monkey bars vs. Tails carrying</li>
+          <li>FBZ 2 boss escapes faster now so he's definitely offscreen when level results start</li>
+          <li>Fix for player not always getting caught in first SOZ sand flow</li>
+          <li>Fixed Sonic getting stuck when Tails carries him into a sand flow or the quicksand</li>
+          <li>Fix for 2nd player Tails getting stuck in mid-air on a SSZ moving bar</li>
+          <li>Fixed orientation of characters during jump from collapsing SSZ to the Death Egg</li>
+          <li>Fixed DEZ gravity transporter character placement (gliding in with Knuckles)</li>
+          <li>Fixed Tails' tails being visible twice in DEZ gravity transporter</li>
+          <li>Tails' flicky army of death does not attack DEZ 2 boss any more</li>
+          <li>No Super Cancel in Doomsday any more</li>
+          <li>A few small A.I.R. level layout changes</li>
+          <li>Added a short camera delay for the drop dash, like in Mania</li>
+          <li>Delay for looking up/down reduced</li>
+          <li>Made sure the "Longplay" achievement get only be completed in Normal Game mode</li>
+          <li>Improved JSON parser error message box</li>
+          <li>Proper game controller connect/disconnect handling</li>
+          <li>Using SDL2's game controller button mappings now where possible (this will hopefully lead to more gamepads being correctly mapped automatically)</li>
+          <li>Added option to start the game in fullscreen already</li>
+          <li>Updated SDL2 library to most recent release</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+  <content_rating type="oars-1.0">
+    <content_attribute id="violence-cartoon">moderate</content_attribute>
+    <content_attribute id="violence-fantasy">none</content_attribute>
+    <content_attribute id="violence-realistic">none</content_attribute>
+    <content_attribute id="violence-bloodshed">none</content_attribute>
+    <content_attribute id="violence-sexual">none</content_attribute>
+    <content_attribute id="drugs-alcohol">none</content_attribute>
+    <content_attribute id="drugs-narcotics">none</content_attribute>
+    <content_attribute id="drugs-tobacco">none</content_attribute>
+    <content_attribute id="sex-nudity">none</content_attribute>
+    <content_attribute id="sex-themes">none</content_attribute>
+    <content_attribute id="language-profanity">none</content_attribute>
+    <content_attribute id="language-humor">none</content_attribute>
+    <content_attribute id="language-discrimination">none</content_attribute>
+    <content_attribute id="social-chat">intense</content_attribute>
+    <content_attribute id="social-info">none</content_attribute>
+    <content_attribute id="social-audio">none</content_attribute>
+    <content_attribute id="social-location">none</content_attribute>
+    <content_attribute id="social-contacts">none</content_attribute>
+    <content_attribute id="money-purchasing">none</content_attribute>
+    <content_attribute id="money-gambling">none</content_attribute>
+  </content_rating>
+</component>
