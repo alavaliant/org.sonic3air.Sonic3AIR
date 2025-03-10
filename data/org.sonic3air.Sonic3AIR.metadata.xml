@@ -26,6 +26,81 @@
     <name>Eukaryot</name>
   </developer>
   <releases>
+    <release type="stable" date="2024-02-01" urgency="medium" version="v24.02.02.1">
+      <description>
+        <p>New features and improvements</p>
+        <ul>
+          <li>Added controller rumble support (needs to be enabled in the Options and might not work with all controllers)</li>
+          <li>Added an in-game downloader for the remastered soundtrack, so the game download can be noticably smaller</li>
+          <li>Experimental Ghost Sync mode is now available directly in the Options menu</li>
+          <li>Added an option for how to draw other players in Ghost Sync, e.g. with full opacity</li>
+          <li>Added a more Mania-accurate rotation implementation to "Character Rotation" in the options</li>
+          <li>Added an option for different visual styles for gamepad button icons</li>
+          <li>Made glitch fix setting for speedrunning more accessible, and split it into three options</li>
+          <li>In mod options, you can now expand / collapse each mod</li>
+          <li>Added faster navigation in Options and Mods menus by holding X (D on keyboard)</li>
+          <li>Changed the background of the mod details window to a dark one, for better readability</li>
+          <li>You can now dropdash in MGZ spin wheel triggers to activate them</li>
+          <li>Knuckles' AIZ intro now uses the correct critters for AIZ</li>
+          <li>With infinite lives option active, 1-up bubbles in bonus stages are replaced with rings now</li>
+          <li>FBZ 2 mid-boss laser can now be destroyed</li>
+          <li>Added missing badniks to Knuckles' path in CNZ 1 for the Sonic 3 level layout</li>
+          <li>Added sound for CNZ cannon shooting</li>
+          <li>Starposts now indicate the special stage type more clearly</li>
+          <li>Improved software rendering blur effect to the same quality as OpenGL hardware</li>
+          <li>Performance improvements for ZIP mod loading and script execution</li>
+        </ul>
+        <p>Bug fixes</p>
+        <ul>
+          <li>Added a whole bunch of game fixes contributed by community members</li>
+          <li>Fixed a rendering problem with OpenGL Hardware setting on latest AMD graphics card drivers on Windows</li>
+          <li>Fix for an issue in frame timing that could lead to a random stuttering frame rate</li>
+          <li>Fix for various rendering issues (with both OpenGL and software)</li>
+          <li>Stability fixes for networking</li>
+          <li>Fix for a crush bug that can occur when walking on ceilings</li>
+          <li>Fixed glitch when dropdashing or bubble bouncing onto the HCZ hand launcher</li>
+          <li>Set a proper level floor height for HCZ 2, so you can't fall into the glitchy abyss there any more</li>
+          <li>Fix for camera / capsule position after HCZ 2 boss</li>
+          <li>Fix for a possible softlock with the MGZ spinning tops</li>
+          <li>Fixed a bug that occurred if dying at the end of ICZ 1 without touching any checkpoint before</li>
+          <li>Fixed a possible softlock with LBZ 1's first cup elevator</li>
+          <li>Removed unnecessary springs in the floor in FBZ 1</li>
+          <li>Fixed sand dust position in SOZ 1 boss</li>
+          <li>Removed duplicate rings in LRZ 2</li>
+          <li>Fixed chunk tiling in HPZ</li>
+          <li>Fixed that the "Keep Shield after Zone" option could give you a shield again after restarting at the last checkpoint</li>
+          <li>Fixed that after level results tally, score numbers just disappeared instead of quickly moving out of the screen</li>
+          <li>Fixed an original game bug that caused you to lose two lives if drowning and be killed by a pirhana at the same time</li>
+          <li>Fix for wrong background colored pixels in Continue sprites for Sonic and Tails</li>
+          <li>Fix for wrong final time in Time Attack if the game got paused in the run</li>
+          <li>Fixes for competition mode items</li>
+          <li>Competition Mode now uses the original game's viewport sizes, instead of having a too small lower viewport</li>
+          <li>Fix for wrong positioning of the competition mode background</li>
+          <li>Several fixes when playing in 4:3 (using dev mode or the classic mode sample mod)</li>
+          <li>Added a security check if scripts cause an internal script stack overflow</li>
+          <li>Additional minor fixes and touch-ups</li>
+        </ul>
+        <p>Modding features &amp; improvements</p>
+        <ul>
+          <li>Replaced "Debug.drawRect" with "Renderer.drawRect", introducing a few more parameters like render queue</li>
+          <li>Using the same reset behavior for "Renderer.drawText" and "Renderer.drawRect" as for sprites, so they don't disappear during fades any more</li>
+          <li>Added a new way of rendering sprites in script ("Renderer.addSpriteHandle" and the various SpriteHandle methods)</li>
+          <li>Also for sprite rendering, added several blend modes and more flexible support for tint &amp; added colors</li>
+          <li>Support for L + R shoulder buttons, if the mod.json unlocks it</li>
+          <li>Support for defining required mods and recommended order of mods (see "doc/Modding.pdf" for details)</li>
+          <li>Added "UniqueID" mod.json property</li>
+          <li>Lemonscript now supports types "float" and "double" for floating point numbers</li>
+          <li>Extended the standard library of functions usable by scripts with more math and string functions</li>
+          <li>Added function "getStringFromCharacter"</li>
+          <li>Support for adding string + number (requires script feature level 2)</li>
+          <li>Added script function "addressof" to query the address inside a memory access (like a define) or the address hook of a function</li>
+          <li>Added support for alias names for script functions</li>
+          <li>Experimental rewind using Numpad-9 (requires dev mode)</li>
+          <li>Added support for changing the "DATA SELECT" text by adding a sprite with the key "dataselect_text"</li>
+          <li>Including a lot of base game script improvements by Vinegar</li>
+        </ul>
+      </description>
+    </release>
     <release type="stable" date="2024-02-01" urgency="medium" version="v24.02.02.0">
       <description>
         <p>New features and improvements</p>
@@ -103,6 +178,7 @@
     </release>
     <release type="stable" date="2022-09-10" urgency="medium" version="v22.09.10.0">
       <description>
+        <p>Sonic 3 A.I.R. v24.02.02.1 is fixing a security issue with v24.02.02.0. If you still use the old version, it's strongly recommended to download the new version.</p>
         <p>New features and options:</p>
         <ul>
           <li>Added a reduced version of the Options menu to the in-game Pause screen</li>
