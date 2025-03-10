@@ -1,7 +1,7 @@
 {
     "app-id" : "org.sonic3air.Sonic3AIR",
     "runtime" : "org.freedesktop.Platform",
-    "runtime-version" : "23.08",
+    "runtime-version" : "24.08",
     "sdk" : "org.freedesktop.Sdk",
     "command" : "sonic3air",
     "finish-args" : [
