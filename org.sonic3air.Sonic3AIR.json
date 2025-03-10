@@ -34,7 +34,7 @@
                 
                 "install -Dp -m 644 org.sonic3air.Sonic3AIR.desktop /app/share/applications/org.sonic3air.Sonic3AIR.desktop",
                 "install -Dp -m 644 org.sonic3air.Sonic3AIR.png /app/share/icons/hicolor/256x256/apps/org.sonic3air.Sonic3AIR.png",
-                "install -Dp -m 644 org.sonic3air.Sonic3AIR.metadata.xml /app/share/metainfo/org.sonic3air.Sonic3AIR.metadata.xml"
+                "install -Dp -m 644 org.sonic3air.Sonic3AIR.metainfo.xml /app/share/metainfo/org.sonic3air.Sonic3AIR.metainfo.xml"
                 
             ],
             "sources" : [
@@ -57,7 +57,7 @@
                 },
                 {
                     "type" : "file",
-                    "path": "data/org.sonic3air.Sonic3AIR.metadata.xml"
+                    "path": "data/org.sonic3air.Sonic3AIR.metainfo.xml"
                 }
             ]
         }
