@@ -10,6 +10,7 @@
     <p>To play Sonic 3: Angel Island Revisited, you need Sonic 3 &amp; Knuckles from the SEGA Mega Drive &amp; Genesis Classics collection installed on Steam.</p>
   </description>
   <url type="homepage">https://sonic3air.org/</url>
+  <url type="vcs-browser">https://github.com/Eukaryot/sonic3air</url>
   <screenshots>
     <screenshot type="default">
       <image>https://sonic3air.org/images/icecap01.png</image>
